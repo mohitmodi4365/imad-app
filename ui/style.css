@@ -15,7 +15,13 @@ body {
 .bold {
     font-weight: bold;
 }
-.hover
+click {
+    font-color: green;
+    
+    
+
+}
+click.hover
 {
     font-color:red;
 }
