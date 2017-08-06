@@ -55,6 +55,7 @@ ul
 }
 li
 {
+    color: white;
  border-radius: 25px;
 float:left;
 list-style-type:none;
