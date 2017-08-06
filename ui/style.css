@@ -57,6 +57,7 @@ li
 float:left;
 list-style-type:none;
 padding:5px;
+color: white;
 border:1px solid black;
 }
 li:hover
