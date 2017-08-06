@@ -33,3 +33,36 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
+#table
+{
+margin-left:300px;
+width:55%;
+
+
+
+}
+article
+{
+
+padding-left:270px;
+}
+body
+{
+background-color:#999999;
+}
+ul
+{
+margin-left:560px;
+}
+li
+{
+ border-radius: 25px;
+float:left;
+list-style-type:none;
+padding:5px;
+border:1px solid black;
+}
+li:hover
+{
+border:2px solid blue;
+}
