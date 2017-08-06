@@ -51,8 +51,7 @@ padding-left:270px;
 
 ul
 {
-    color: white;
-margin-left:560px;
+ margin-left:560px;
 }
 li
 {
@@ -60,10 +59,9 @@ li
 float:left;
 list-style-type:none;
 padding:5px;
-color: white;
 border:1px solid black;
 }
 li:hover
 {
-border:2px solid blue;
+border:2px solid black;
 }
