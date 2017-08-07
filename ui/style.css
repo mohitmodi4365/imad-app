@@ -55,6 +55,19 @@ padding-left:270px;
 a:link {
     color: white;
 }
+a:visited {
+    color: grey;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
 ul
 {
  margin-left:430px;
