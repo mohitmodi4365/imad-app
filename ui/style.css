@@ -52,7 +52,9 @@ article
 
 padding-left:270px;
 }
-
+a:link {
+    color: red;
+}
 ul
 {
  margin-left:430px;
