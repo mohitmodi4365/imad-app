@@ -33,7 +33,11 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
-
+.a
+{
+    style="color: red";
+    
+}
 
 #table
 {
