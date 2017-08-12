@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
-    color: white;
-    background-image: url("http://www.planwallpaper.com/static/images/cool_wooden_wall_1920x1200_cool_twitter_backgrounds.jpg");
+    color: black;
+    
     margin-top: 75px;
   
 }
@@ -33,11 +33,7 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
-.href
-{
-    style="color: red";
-    
-}
+
 
 #table
 {
