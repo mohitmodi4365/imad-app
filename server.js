@@ -12,39 +12,13 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
+var articles={
+    articleOne:{},
+    articleTwo:{}
+    
+    
+};
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-var pool = new pool(config);
-app.get('/test', function (req, res){
-   //make a select request
-   //return a response with results
-   pool.query('SELECT * FROM test',function(err, result){
-      if(err) {
-          res.status(50).send(err.toString());
-      } else {
-          res.send(JSON.stringify(result));
-      }
-   });
-});
-app.get('/article/:article-name', function(req, res) {
-   //article-name === article-one
-   //articles[article-name] === {} content object for article-one
-   pool.query(" SELECT * FROM article WHERE title= '" + req.params.articleName + "'",function(err, result){
-       if(err) {
-           res.status(500).send(err.toString());
-       }else {
-           if(result.rows.length === 0){
-               res.ststus(404),send("Article Not found");
-               
-           }else {
-            var articleData = result.rows[0];
-   res.send(createTemplate(articleData));         
-     }  }
-   });
-   
-});
 function createTemplate(data){
 var title = data.title;
 var date = data.date;
@@ -80,11 +54,45 @@ var htmlTemplate = `
     return htmlTemplate;
     }
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+var pool = new pool(config);
+app.get('/test', function (req, res){
+   //make a select request
+   //return a response with results
+   pool.query('SELECT * FROM test',function(err, result){
+      if(err) {
+          res.status(50).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result));
+      }
+   });
+});
 
 
 
 
 
+
+
+app.get('/article/:articleName', function(req, res) {
+   //article-name === article-one
+   //articles[article-name] === {} content object for article-one
+   pool.query(" SELECT * FROM article WHERE title= '" + req.params.articleName + "'",function(err, result){
+       if(err) {
+           res.status(500).send(err.toString());
+       }else {
+           if(result.rows.length === 0){
+               res.ststus(404),send("Article Not found");
+               
+           }else {
+            var articleData = result.rows[0];
+   res.send(createTemplate(articleData));         
+     }  }
+   });
+   
+});
 app.get('/ui/contectus', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contectus.html'));
 });
@@ -104,6 +112,8 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
+
+//var articles
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
