@@ -7,7 +7,7 @@ var config = {
     user: 'mohitmodi4365',
     database: 'mohitmodi4365',
     host: 'db.imad.hasura-app.io',
-    port: '5432',
+    port: '80',
     password: process.env.DB_PASSWORD
 };
 var app = express();
