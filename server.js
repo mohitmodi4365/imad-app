@@ -32,7 +32,19 @@ app.get('/article/:article-name', function(req, res) {
    //article-name === article-one
    //articles[article-name] === {} content object for article-one
    var articleName = req.params.articleName;
-   res.send(createTemplate(articles[articleName]));
+   pool.query(" SELECT * FROM article WHERE title= "+req.params.articleName,function(err, result){
+       if(err) {
+           res.status(500).send(err.toString());
+       }else {
+           if(result.rows.length === 0){
+               res.ststus(404),send("Article Not found");
+               
+           }else {
+            var articleData = result.rows[0];
+   res.send(createTemplate(articleData));         
+       }
+   });
+   
 });
 app.get('/ui/contectus', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contectus.html'));
