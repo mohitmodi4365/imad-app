@@ -23,7 +23,7 @@ function createTemplate(data){
 var title = data.title;
 var date = data.date;
 var heading = data.heading;
-var containt = data.content;
+var contant = data.content;
 var htmlTemplate = `
 <html>
    <head>
@@ -79,7 +79,7 @@ app.get('/test', function (req, res){
 app.get('/article/:articleName', function(req, res) {
    //article-name === article-one
    //articles[article-name] === {} content object for article-one
-   pool.query(" SELECT * FROM article WHERE title= '" + req.params.articleName + "'",function(err, result){
+   pool.query("SELECT * FROM article WHERE title= '" + req.params.articleName + "'",function(err, result){
        if(err) {
            res.status(500).send(err.toString());
        }else {
