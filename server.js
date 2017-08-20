@@ -70,7 +70,7 @@ app.get('/test', function (req, res){
 
 
 
-app.get('/:articleName', function(req, res) {
+app.get('/article/:articleName', function(req, res) {
    //article-name === article-one
    //articles[article-name] === {} content object for article-one
    pool.query("SELECT * FROM article WHERE title= '" + req.params.articleName + "'",function(err, result){
