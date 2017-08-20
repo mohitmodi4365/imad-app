@@ -12,12 +12,12 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
-var articles={
+/*var articles={
     articleOne:{},
     articleTwo:{}
     
     
-};
+}; */
 
 function createTemplate(data){
 var title = data.title;
@@ -61,7 +61,7 @@ var pool = new pool(config);
 app.get('/test', function (req, res){
    //make a select request
    //return a response with results
-   pool.query('SELECT * FROM test',function(err, result){
+   pool.query('SELECT * FROM test',function(err, result) {
       if(err) {
           res.status(50).send(err.toString());
       } else {
