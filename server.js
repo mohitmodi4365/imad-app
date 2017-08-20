@@ -28,6 +28,12 @@ app.get('/test', function (req, res){
       }
    });
 });
+app.get('/article/:article-name', function(req, res) {
+   //article-name === article-one
+   //articles[article-name] === {} content object for article-one
+   var articleName = req.params.articleName;
+   res.send(createTemplate(articles[articleName]));
+});
 app.get('/ui/contectus', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contectus.html'));
 });
